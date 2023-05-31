@@ -24,12 +24,7 @@ async function executeWithNotice(fn, ...args) {
 
   const WARNING = `
 --- IMPORTANT PLEASE READ ---\n\n
-Hey! \n
-No worries, everything is fine. Before starting, let me explain how this works and share some advice.\n
-First, never blindly paste code into the console unless you understand it.\n
-Although this code isn't malicious, the developer console is risky unless you're confident in your abilities.\n
-Pasting code you don't comprehend is like giving your phone to a stranger.\n
-Anything you can do on Instagram's website or app can be done through code in the developer console. Be very cautious!\n\n
+
 How this script works:\n
 (APIs allow your browser to communicate with Instagram's servers)\n
 1. We use the Instagram search API with your username to obtain your User ID, which identifies your account on Instagram.\n
@@ -37,17 +32,15 @@ How this script works:\n
 This mimics scrolling through your own Instagram following list, with pauses between requests to avoid looking like a bot.\n
 3. We repeat this process for the 'followers' API endpoint, creating lists of your followers and followings.\n
 4. We compare the lists, displaying the difference as 'People who don't follow you back' and vice versa.\n\n
-Now that you know how it works, do you want to continue? (If not, close this tab.)\n`;
 
-  // Sorry I know this is ugly I didn't want to make the file too long
   document.write(`<pre style='white-space: pre-wrap;word-wrap: break-word;'>${WARNING}</pre>
   <br />
-  <button style='cursor:pointer;padding: 1rem;box-shadow: 4px 5px 1px #b0b0b0;font-size: 18px;background: #00b894; color: white;border-radius: 10px;' onClick="window.resolveInstaScriptPermissions()">OK I understand and want to continue</button>`);
+  <button style='cursor:pointer;padding: 1rem;box-shadow: 4px 5px 1px #b0b0b0;font-size: 18px;background: #00b894; color: white;border-radius: 10px;' onClick="window.resolveInstaScriptPermissions()">Continue</button>`);
 
   await permission;
 
 
-  document.write("<br/><p color='green;font-weight: bolder;'>Ok, thanks. Look back at the console to see the output. Refreshing this tab will also make everything go back to normal.</p>")
+  document.write("<br/><p color='green;font-weight: bolder;'>Generating followers...</p>")
   return await fn(...args);
 }
 
