@@ -13,7 +13,7 @@ window.resolveInstaScriptPermissions = () => {};
 async function executeWithNotice(fn, ...args) {
   if (window.location.origin !== "https://www.instagram.com") {
     window.alert(
-      "Hey! You need to be on the instagram site before you run the code. I'm taking you there now but you're going to have to run the code into the console again."
+      "Redirecting to www.instagramd.com... Run script on console again"
     );
     window.location.href = "https://www.instagram.com";
     console.clear();
@@ -104,7 +104,7 @@ const getUserId = async (username) => {
 const getUserFriendshipStats = async (username) => {
   if (username === "example_username") {
     username = window.prompt(
-      "Hey, it looks like you forgot to change the username variable. No worries, we'll update it right now. What's your username?"
+      "It looks like you forgot to change the username variable. What's your username?"
     );
   }
 
