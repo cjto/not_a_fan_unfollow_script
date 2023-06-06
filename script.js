@@ -31,7 +31,7 @@ How this script works:\n
 2. We call the 'following' API endpoint with your user ID.\n
 This mimics scrolling through your own Instagram following list, with pauses between requests to avoid looking like a bot.\n
 3. We repeat this process for the 'followers' API endpoint, creating lists of your followers and followings.\n
-4. We compare the lists, displaying the difference as 'People who don't follow you back' and vice versa.\n\n
+4. We compare the lists, displaying the difference as 'People who don't follow you back' and vice versa.\n\n`;
 
   document.write(`<pre style='white-space: pre-wrap;word-wrap: break-word;'>${WARNING}</pre>
   <br />
